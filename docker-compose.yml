@@ -8,7 +8,13 @@ services:
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    networks:
+      - npm_bridge
     # 開發時可使用 volume 掛載
     # volumes:
     #   - ./src:/app/src
     #   - ./README.md:/app/README.md
+
+networks:
+  npm_bridge:
+    external: true
