@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    # 開發時可使用 volume 掛載
+    # volumes:
+    #   - ./src:/app/src
+    #   - ./README.md:/app/README.md
